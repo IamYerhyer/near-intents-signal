@@ -52,6 +52,10 @@ the hypothesis — read Panel 3 and `THESIS.md` before citing the claim.
    capture ratio) are always recomputed from data, never hand-entered.
 5. Read `THESIS.md` → see the claim, evidence for, evidence against
    (including the lead–lag result), and what would change our mind.
+   Its Sections 6 and 8 (Q6) record the primary-source check on the
+   capture-ratio jump (34.2% trailing-30d vs 16.1% all-time): a
+   confirmed mechanism — the 2026-02-23 fee switch (see DefiLlama
+   dimension-adapters PR #7738).
 
 ## Chart rendering decision
 
