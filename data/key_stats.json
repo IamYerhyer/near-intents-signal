@@ -1,0 +1,63 @@
+{
+  "generated_at_utc": "2026-11-04T20:46:11.733509+00:00",
+  "data_as_of": "2026-11-03",
+  "sources": {
+    "daily_volume": "https://api.llama.fi/summary/dexs/near-intents?dataType=dailyVolume",
+    "daily_fees": "https://api.llama.fi/summary/fees/near-intents?dataType=dailyFees",
+    "daily_revenue": "https://api.llama.fi/summary/fees/near-intents?dataType=dailyRevenue",
+    "price": "https://coins.llama.fi/chart/coingecko:near?start=1762289176&span=365&period=1d",
+    "chains_snapshot": "https://api.llama.fi/v2/chains",
+    "protocol": "https://api.llama.fi/protocol/near-intents",
+    "chain_tvl_history": "https://api.llama.fi/v2/historicalChainTvl/Near"
+  },
+  "intents_cumulative_volume_usd": 36386550029.0,
+  "intents_total_all_time_api_usd": 36386550029,
+  "intents_volume_24h_api_usd": 137911779,
+  "intents_volume_30d_api_usd": 3970607022,
+  "intents_volume_30d_computed": {
+    "sum_usd": 3970607022.0,
+    "days": 30,
+    "from": "2026-10-05",
+    "to": "2026-11-03"
+  },
+  "intents_fees_all_time_api_usd": 58417650.980000004,
+  "intents_fees_30d_api_usd": 5918596,
+  "intents_fees_30d_computed_complete_days": {
+    "sum_usd": 6149985.0,
+    "days": 30,
+    "from": "2026-10-04",
+    "to": "2026-11-02"
+  },
+  "intents_revenue_all_time_api_usd": 9392806.05,
+  "intents_revenue_30d_api_usd": 1999088,
+  "intents_revenue_30d_computed_complete_days": {
+    "sum_usd": 2100314.0,
+    "days": 30,
+    "from": "2026-10-04",
+    "to": "2026-11-02"
+  },
+  "near_latest_price_usd": 3.8443482545533123,
+  "near_latest_price_date": "2026-11-03",
+  "near_chain_tvl_snapshot_usd": 191434385.08889285,
+  "near_chain_tvl_snapshot_fetched_at_utc": "2026-11-04T20:46:11.733509+00:00",
+  "intents_tvl_latest_usd": 203364435.0,
+  "intents_tvl_latest_date": "2026-11-04",
+  "cumulative_volume_milestones_usd": {
+    "2026-06-30": 22239779942.0,
+    "2026-09-15": 29281035154.0,
+    "2026-11-03": 36386550029.0
+  },
+  "correlation": {
+    "method": "Pearson r between DefiLlama daily Intents volume (USD) and daily NEAR price (USD, coins.llama.fi coingecko:near) on dates present in both series.",
+    "pearson_r_daily": 0.501376147984008,
+    "n_days_daily": 365,
+    "pearson_r_30d_rolling_volume": 0.7842868314908035,
+    "n_days_30d_rolling": 365
+  },
+  "partial_day_flags": [
+    "2026-11-03"
+  ],
+  "notes": [
+    "Final fees day 2026-11-03 flagged partial: fees $9,319 < revenue $44,928 on the same date (revenue is a subset of fees, so a complete day cannot show this). Excluded from computed trailing-30d sums."
+  ]
+}
