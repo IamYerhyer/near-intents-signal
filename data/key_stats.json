@@ -1,14 +1,15 @@
 {
-  "generated_at_utc": "2026-11-04T20:46:11.733509+00:00",
+  "generated_at_utc": "2026-11-04T21:31:04.126569+00:00",
   "data_as_of": "2026-11-03",
   "sources": {
     "daily_volume": "https://api.llama.fi/summary/dexs/near-intents?dataType=dailyVolume",
     "daily_fees": "https://api.llama.fi/summary/fees/near-intents?dataType=dailyFees",
     "daily_revenue": "https://api.llama.fi/summary/fees/near-intents?dataType=dailyRevenue",
-    "price": "https://coins.llama.fi/chart/coingecko:near?start=1762289176&span=365&period=1d",
+    "price": "https://coins.llama.fi/chart/coingecko:near?start=1762291870&span=365&period=1d",
     "chains_snapshot": "https://api.llama.fi/v2/chains",
     "protocol": "https://api.llama.fi/protocol/near-intents",
-    "chain_tvl_history": "https://api.llama.fi/v2/historicalChainTvl/Near"
+    "chain_tvl_history": "https://api.llama.fi/v2/historicalChainTvl/Near",
+    "market_cap": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=near"
   },
   "intents_cumulative_volume_usd": 36386550029.0,
   "intents_total_all_time_api_usd": 36386550029,
@@ -36,12 +37,145 @@
     "from": "2026-10-04",
     "to": "2026-11-02"
   },
-  "near_latest_price_usd": 3.8443482545533123,
+  "near_latest_price_usd": 3.8619223000244323,
   "near_latest_price_date": "2026-11-03",
-  "near_chain_tvl_snapshot_usd": 191434385.08889285,
-  "near_chain_tvl_snapshot_fetched_at_utc": "2026-11-04T20:46:11.733509+00:00",
-  "intents_tvl_latest_usd": 203364435.0,
+  "near_chain_tvl_snapshot_usd": 186509945.95858917,
+  "near_chain_tvl_snapshot_fetched_at_utc": "2026-11-04T21:31:04.126569+00:00",
+  "intents_tvl_latest_usd": 202140501.0,
   "intents_tvl_latest_date": "2026-11-04",
+  "intents_tvl_by_chain": [
+    {
+      "chain": "Near",
+      "tvl_usd": 109017683.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Ethereum",
+      "tvl_usd": 58839325.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Tron",
+      "tvl_usd": 7877310.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Bitcoin",
+      "tvl_usd": 6815731.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Binance",
+      "tvl_usd": 5268121.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Arbitrum",
+      "tvl_usd": 3478121.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Base",
+      "tvl_usd": 2882475.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Ripple",
+      "tvl_usd": 1466565.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Litecoin",
+      "tvl_usd": 1442780.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Polygon",
+      "tvl_usd": 1425187.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "xDai",
+      "tvl_usd": 1130513.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Avalanche",
+      "tvl_usd": 459753.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Doge",
+      "tvl_usd": 430508.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Sui",
+      "tvl_usd": 371761.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Optimism",
+      "tvl_usd": 324590.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Dash",
+      "tvl_usd": 320425.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Monad",
+      "tvl_usd": 140972.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Cardano",
+      "tvl_usd": 111526.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "TON",
+      "tvl_usd": 105126.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Solana",
+      "tvl_usd": 83662.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Stellar",
+      "tvl_usd": 73501.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Berachain",
+      "tvl_usd": 46632.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "X Layer",
+      "tvl_usd": 27661.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "ADI",
+      "tvl_usd": 404.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Aurora",
+      "tvl_usd": 115.0,
+      "as_of": "2026-11-04"
+    },
+    {
+      "chain": "Aptos",
+      "tvl_usd": 44.0,
+      "as_of": "2026-11-04"
+    }
+  ],
+  "intents_tvl_by_chain_total_usd": 202140491.0,
   "cumulative_volume_milestones_usd": {
     "2026-06-30": 22239779942.0,
     "2026-09-15": 29281035154.0,
@@ -49,10 +183,105 @@
   },
   "correlation": {
     "method": "Pearson r between DefiLlama daily Intents volume (USD) and daily NEAR price (USD, coins.llama.fi coingecko:near) on dates present in both series.",
-    "pearson_r_daily": 0.501376147984008,
+    "pearson_r_daily": 0.5027576707966094,
     "n_days_daily": 365,
-    "pearson_r_30d_rolling_volume": 0.7842868314908035,
+    "pearson_r_30d_rolling_volume": 0.7836955832530399,
     "n_days_30d_rolling": 365
+  },
+  "leadlag": {
+    "method": "Cross-correlation: for lag L in -30..+30 days, Pearson r between Intents volume on day t and NEAR price on day t+L, on dates present in both series. Positive L = volume measured BEFORE price. Two volume series: raw daily volume, and the trailing 7-day rolling mean of daily volume. Levels correlations are inflated by the shared upward trend in both series, so the robustness check correlates the 7-day % change in 7-day rolling volume with FORWARD NEAR price returns (price[t+w]/price[t]-1).",
+    "best_lag_levels_daily": {
+      "lag_days": 3,
+      "r": 0.5395991359895745
+    },
+    "best_lag_levels_7d_rolling": {
+      "lag_days": 2,
+      "r": 0.6966814445393569
+    },
+    "r_at_lag0_daily": 0.5027576707966094,
+    "r_at_lag0_7d_rolling": 0.6893060302532249,
+    "classification_from_7d_levels": "coincident",
+    "forward_return_tests": [
+      {
+        "forward_window_days": 1,
+        "pearson_r": 0.10632849918392892,
+        "n": 364
+      },
+      {
+        "forward_window_days": 7,
+        "pearson_r": -0.007316715485067982,
+        "n": 358
+      },
+      {
+        "forward_window_days": 14,
+        "pearson_r": 0.027547715986912757,
+        "n": 351
+      },
+      {
+        "forward_window_days": 30,
+        "pearson_r": 0.04899092619503035,
+        "n": 335
+      }
+    ],
+    "verdict": "Levels cross-correlation peaks at or near lag 0 \u2014 volume and price move together rather than volume going first; on this data volume is a coincident, not leading, indicator.",
+    "csv": "data/leadlag.csv"
+  },
+  "value_capture": {
+    "method": "Computed from the DefiLlama daily fees/revenue series. Trailing-30d figures use complete days only (flagged partial day excluded). Take rates divide by Intents volume over the same trailing-30-complete-days window as the fees sum.",
+    "capture_ratio_all_time": 0.16078712328258016,
+    "capture_ratio_trailing_30d_complete_days": 0.3415153045088728,
+    "fee_take_rate_trailing_30d": 0.001578113142555766,
+    "revenue_take_rate_trailing_30d": 0.0005389497904293865,
+    "volume_in_fee_window_usd": 3897049479.0,
+    "fee_window": {
+      "from": "2026-10-04",
+      "to": "2026-11-02",
+      "days": 30
+    },
+    "annualised_revenue_run_rate_usd": 25553820.333333332,
+    "buyback_mechanism": "Since 2026-02-23, NEAR's captured Intents revenue is used to buy back $NEAR on the open market (not burned), per the DefiLlama NEAR Intents methodology: revenue is NEAR's net captured revenue, measured as NEAR/wNEAR swept into its revenue wallets, and since 2026-02-23 that captured revenue funds open-market buybacks. Source: https://defillama.com/protocol/near-intents"
+  },
+  "market_cap": {
+    "status": "ok",
+    "reason": null,
+    "source": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=near",
+    "market_cap_usd": 5262407956.0,
+    "price_usd": 4.01,
+    "fetched_at_utc": "2026-11-04T21:31:04.126569+00:00"
+  },
+  "scenario_model": {
+    "file": "data/model_outputs.json",
+    "config": "model_config.json",
+    "base_annualised_volume_run_rate_usd": 48309052101.0,
+    "scenarios": [
+      {
+        "name": "Bear",
+        "label": "Flat \u2014 annual Intents volume one year out equals the current annualised run-rate",
+        "volume_multiplier_vs_current_annualised_run_rate": 1.0,
+        "annual_volume_usd": 48309052101.0,
+        "gross_fees_usd": 76237150.02499934,
+        "captured_revenue_usd": 26036153.505676266,
+        "captured_revenue_pct_of_market_cap": 0.4947574137803365
+      },
+      {
+        "name": "Base",
+        "label": "2x the current annualised run-rate",
+        "volume_multiplier_vs_current_annualised_run_rate": 2.0,
+        "annual_volume_usd": 96618104202.0,
+        "gross_fees_usd": 152474300.04999867,
+        "captured_revenue_usd": 52072307.01135253,
+        "captured_revenue_pct_of_market_cap": 0.989514827560673
+      },
+      {
+        "name": "Bull",
+        "label": "4x the current annualised run-rate",
+        "volume_multiplier_vs_current_annualised_run_rate": 4.0,
+        "annual_volume_usd": 193236208404.0,
+        "gross_fees_usd": 304948600.09999734,
+        "captured_revenue_usd": 104144614.02270506,
+        "captured_revenue_pct_of_market_cap": 1.979029655121346
+      }
+    ]
   },
   "partial_day_flags": [
     "2026-11-03"

@@ -1,0 +1,51 @@
+{
+  "generated_at_utc": "2026-11-04T21:31:04.126569+00:00",
+  "framing": "Scenario arithmetic, NOT a price prediction and NOT a forecast. Annual volume = current annualised run-rate x a chosen scenario multiplier (model_config.json); fees and captured revenue apply the OBSERVED trailing-30d fee take rate and capture ratio, held constant. Captured revenue is the buyback $ amount at the current mechanism described in key_stats.json value_capture.buyback_mechanism.",
+  "base_inputs": {
+    "annualised_volume_run_rate_usd": 48309052101.0,
+    "run_rate_basis": "trailing-30d computed volume 2026-10-05 to 2026-11-03",
+    "fee_take_rate": 0.001578113142555766,
+    "capture_ratio": 0.3415153045088728,
+    "trailing_30d_volume_usd": 3970607022.0,
+    "trailing_30d_fees_usd": 6149985.0,
+    "trailing_30d_revenue_usd": 2100314.0
+  },
+  "market_cap": {
+    "status": "ok",
+    "reason": null,
+    "source": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=near",
+    "market_cap_usd": 5262407956.0,
+    "price_usd": 4.01,
+    "fetched_at_utc": "2026-11-04T21:31:04.126569+00:00"
+  },
+  "scenarios": [
+    {
+      "name": "Bear",
+      "label": "Flat \u2014 annual Intents volume one year out equals the current annualised run-rate",
+      "volume_multiplier_vs_current_annualised_run_rate": 1.0,
+      "annual_volume_usd": 48309052101.0,
+      "gross_fees_usd": 76237150.02499934,
+      "captured_revenue_usd": 26036153.505676266,
+      "captured_revenue_pct_of_market_cap": 0.4947574137803365
+    },
+    {
+      "name": "Base",
+      "label": "2x the current annualised run-rate",
+      "volume_multiplier_vs_current_annualised_run_rate": 2.0,
+      "annual_volume_usd": 96618104202.0,
+      "gross_fees_usd": 152474300.04999867,
+      "captured_revenue_usd": 52072307.01135253,
+      "captured_revenue_pct_of_market_cap": 0.989514827560673
+    },
+    {
+      "name": "Bull",
+      "label": "4x the current annualised run-rate",
+      "volume_multiplier_vs_current_annualised_run_rate": 4.0,
+      "annual_volume_usd": 193236208404.0,
+      "gross_fees_usd": 304948600.09999734,
+      "captured_revenue_usd": 104144614.02270506,
+      "captured_revenue_pct_of_market_cap": 1.979029655121346
+    }
+  ],
+  "config_file": "model_config.json"
+}

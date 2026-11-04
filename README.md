@@ -1,6 +1,6 @@
 # Flow, Not Price — The $37B Decoupling (DRAFT)
 
-**Status:** DRAFT v0 — working title, local build only, not yet published anywhere.
+**Status:** DRAFT v1 — working title, private repo, not yet published anywhere.
 **Event:** NEAR HACKATHON (1–14 Nov 2026), track: Investment Thesis (`thesis`).
 **Author:** Shuaibu Yahaya (solo).
 
@@ -15,24 +15,43 @@ Investment Thesis track prompt:
 
 `index.html` is a static dashboard generated entirely from public data by one
 script. Every headline number traces to a CSV or JSON file in `data/`, which
-the script regenerates from raw API responses saved in `data/raw/`.
+the script regenerates from raw API responses saved in `data/raw/`. The v1
+lead–lag test's verdict is deliberately unflattering to the strong version of
+the hypothesis — read Panel 3 and `THESIS.md` before citing the claim.
 
 ## Do X → see Y (for judges / AI screeners)
 
-1. Run `python3 rebuild.py` → see it fetch 6–7 public API endpoints, write
-   `data/raw/*.json`, `data/*.csv`, `data/key_stats.json`, and regenerate
-   `index.html`. Requires only Python 3 (standard library only) and internet
-   access. No API keys.
+1. Run `python3 rebuild.py` → see it fetch the public API endpoints, write
+   `data/raw/*.json`, `data/*.csv`, `data/leadlag.csv`, `data/key_stats.json`,
+   `data/model_outputs.json`, and regenerate `index.html`. Requires only
+   Python 3 (standard library only) and internet access. No API keys.
 2. Open `index.html` in any browser (double-click works, `file://` is fine)
-   → see a Key Stats strip, Panel 1 (daily Intents volume vs NEAR price) and
-   Panel 2 (trailing-30d Intents volume vs NEAR chain TVL), each with its
-   source endpoints, the code/CSV behind it, and one plain sentence of
-   interpretation.
+   → see a Key Stats strip and six panels, each with its source endpoints,
+   the code/CSV behind it, and one plain sentence of interpretation:
+   - **Panel 1 — The Decoupling Chart:** daily Intents volume vs NEAR price.
+   - **Panel 2 — Flow vs Vault:** trailing-30d Intents volume vs NEAR chain TVL.
+   - **Panel 3 — Does Volume Lead Price?:** cross-correlation of volume with
+     price at lags −30…+30 days, plus the forward-return robustness check.
+     The finding, stated on the panel: volume is coincident with price, not
+     leading it, on this data.
+   - **Panel 4 — Value Capture:** daily fees vs captured revenue, capture
+     ratio, effective take rates, annualised revenue run-rate, and the
+     buyback mechanism (sourced, nothing more claimed than the source says).
+   - **Panel 5 — The Private Layer & Chain Footprint:** Intents TVL by chain
+     (verifiable from the protocol endpoint) next to a clearly labelled box
+     of first-party NEAR claims we do **not** independently verify.
+   - **Panel 6 — The Model:** bear/base/bull scenario arithmetic (not a
+     prediction) built from `model_config.json`.
 3. Open `data/key_stats.json` → see every headline figure, its as-of date,
-   the exact source URLs used, the correlation method, and any data-quality
-   flags (e.g. partial days).
-4. Read `THESIS.md` → see the claim, evidence for, evidence against, and
-   what result would change our mind.
+   the exact source URLs used, the correlation and lead–lag methods and full
+   results (`leadlag`, `value_capture` keys), and any data-quality flags
+   (e.g. partial days).
+4. Edit a multiplier in `model_config.json`, re-run `python3 rebuild.py`
+   → see Panel 6 and `data/model_outputs.json` change accordingly. Base
+   inputs (annualised volume run-rate, observed fee take rate, observed
+   capture ratio) are always recomputed from data, never hand-entered.
+5. Read `THESIS.md` → see the claim, evidence for, evidence against
+   (including the lead–lag result), and what would change our mind.
 
 ## Chart rendering decision
 
@@ -51,45 +70,68 @@ file with zero dependencies that renders identically anywhere, offline.
 | NEAR daily price | https://coins.llama.fi/chart/coingecko:near?start=<epoch>&span=365&period=1d |
 | NEAR chain TVL (snapshot) | https://api.llama.fi/v2/chains |
 | NEAR chain TVL (history) | https://api.llama.fi/v2/historicalChainTvl/Near |
-| Intents TVL history | https://api.llama.fi/protocol/near-intents |
+| Intents TVL history + TVL by chain | https://api.llama.fi/protocol/near-intents |
+| NEAR market cap (Panel 6 only) | https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=near |
+| Buyback mechanism description | https://defillama.com/protocol/near-intents (methodology section) |
 
 The exact price URL used in a given run (it contains a start timestamp) is
-recorded in `data/key_stats.json` under `sources.price`.
+recorded in `data/key_stats.json` under `sources.price`. The market-cap
+fetch result (value, timestamp, or the failure reason) is recorded under
+`market_cap` in `data/key_stats.json` and in `data/model_outputs.json`.
 
 ## Repository layout
 
 - `rebuild.py` — the one command. Fetches, tidies, computes, renders.
 - `index.html` — generated dashboard (do not hand-edit; re-run rebuild.py).
 - `THESIS.md` — the written thesis (DRAFT).
-- `data/` — generated CSVs + `key_stats.json`; `data/raw/` — raw API JSON.
+- `model_config.json` — editable scenario assumptions for Panel 6 (volume
+  multipliers only; base inputs are computed from data by `rebuild.py`).
+- `data/` — generated CSVs + `key_stats.json` + `model_outputs.json`;
+  `data/raw/` — raw API JSON. `data/leadlag.csv` holds the full
+  cross-correlation curve behind Panel 3.
 - `queries/` — planned: optional NEAR BigQuery SQL layer (active accounts,
   tx counts) for judges with GCP access. The dashboard does not depend on it.
 
 ## Known limitations (read before citing any number)
 
 1. **Partial final day (fees).** The last day of the DefiLlama fees series
-   can be incomplete. v0 detects this when the final fees value is lower
-   than the same day's revenue (revenue is a subset of fees, so this is
-   impossible for a complete day) and flags it `partial_day=true` in
+   can be incomplete. The script detects this when the final fees value is
+   lower than the same day's revenue (revenue is a subset of fees, so this
+   is impossible for a complete day) and flags it `partial_day=true` in
    `data/intents_daily_fees.csv`, excludes it from computed trailing-30d
    sums, and records the flag in `key_stats.json`. API-reported totals are
    kept separately and labelled `*_api_usd`. Never quote a flagged day as a
    full day.
 2. **Price series anchoring.** The coins.llama.fi chart samples daily points
-   from the requested `start` timestamp; v0 anchors `start` to
-   now − 365 days. The exact URL is saved per run in `key_stats.json`.
+   from the requested `start` timestamp; the script anchors `start` to
+   now − 365 days, so the sampled points (and correlations to the third
+   decimal) can drift microscopically between runs. The exact URL is saved
+   per run in `key_stats.json`.
 3. **First-party figures are NOT used as fact.** NEAR-reported figures that
    we could not reproduce from the public APIs above — e.g. "37M+ swaps",
-   Confidential Intents TVL (~$145M), NEAR staked for AI inference — are
-   mentioned, if at all, only as attributed claims in `THESIS.md`, never as
-   dashboard numbers.
-4. **Correlation is descriptive, not a lead-lag test.** v0 computes Pearson
-   correlation between daily volume and price on overlapping dates (method
-   stated in `key_stats.json`). Whether volume *leads* price requires the
-   lag analysis listed as an open question in `THESIS.md`.
-5. **TVL snapshots are point-in-time.** Chain TVL from `/v2/chains` is a
-   live snapshot stamped with the rebuild time; the protocol endpoint's
-   latest TVL point can carry an intraday timestamp.
-6. **Volume is flow, not unique usage.** DefiLlama DEX volume can include
+   Confidential Intents TVL (~$145M), NEAR staked for AI inference — appear
+   only in Panel 5's attributed-claims box and in `THESIS.md` as attributed
+   claims, never as dashboard statistics. Panel 5's chain-TVL table, by
+   contrast, is computed from the DefiLlama protocol endpoint.
+4. **Lead–lag method and its caveat.** Panel 3 pairs volume on day t with
+   price on day t+lag (positive lag = volume first) over the overlapping
+   daily series, for both raw daily volume and its 7-day rolling mean.
+   Levels correlations are inflated by the shared upward trend, which is
+   why the panel also reports the robustness check: correlation between
+   the 7-day % change in rolling volume and forward price returns at
+   1/7/14/30-day horizons. Full method text and every lag's r are in
+   `data/key_stats.json` (`leadlag`) and `data/leadlag.csv`.
+5. **Market cap is a live snapshot and may be missing.** CoinGecko's free
+   API can rate-limit. If the fetch fails, Panel 6 omits the
+   "% of market cap" column and the reason is recorded in
+   `data/model_outputs.json` — the dollar columns are unaffected.
+6. **TVL snapshots are point-in-time.** Chain TVL from `/v2/chains` is a
+   live snapshot stamped with the rebuild time and moves intraday; the
+   protocol endpoint's latest TVL point can carry an intraday timestamp.
+7. **Volume is flow, not unique usage.** DefiLlama DEX volume can include
    repeat/arbitrage flow; it is not a count of unique users. BigQuery
    active-account data (planned `queries/` layer) is the cross-check.
+8. **Scenario model is arithmetic, not a forecast.** Panel 6 holds the
+   observed fee take rate and capture ratio constant and scales volume by
+   chosen multipliers from `model_config.json`. Real take rates, capture
+   ratios and the buyback mechanism can all change.
