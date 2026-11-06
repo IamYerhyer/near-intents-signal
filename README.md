@@ -1,8 +1,9 @@
 # Flow, Not Price — The $37B Decoupling (DRAFT)
 
-**Status:** DRAFT v1 — working title, private repo, not yet published anywhere.
+**Status:** Public — live dashboard at https://iamyerhyer.github.io/near-intents-signal/ (thesis text still marked DRAFT pending author's final review).
 **Event:** NEAR HACKATHON (1–14 Nov 2026), track: Investment Thesis (`thesis`).
 **Author:** Shuaibu Yahaya (solo).
+**Second entry:** This is one of two independent entries by the same author. The other is [near-intents-checkout](https://github.com/IamYerhyer/near-intents-checkout) — a universal checkout widget for NEAR Intents (Business track).
 
 ## What this is
 
