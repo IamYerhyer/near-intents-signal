@@ -823,7 +823,7 @@ def build_html(ks, model, chart1, chart2, chart3, chart4, fmt):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flow, Not Price — The $37B Decoupling (DRAFT)</title>
+<title>Flow, Not Price — The $37B Decoupling</title>
 <style>
   body {{ margin:0; background:#0d1117; color:#e6edf3; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; }}
   .wrap {{ max-width:980px; margin:0 auto; padding:20px 16px 48px; }}

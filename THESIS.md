@@ -1,6 +1,6 @@
-# Flow, Not Price: What NEAR Intents Volume Actually Tells Us (DRAFT)
+# Flow, Not Price: What NEAR Intents Volume Actually Tells Us
 
-**Status: DRAFT — for NEAR HACKATHON, Investment Thesis track.**
+**Status: Final — NEAR HACKATHON, Investment Thesis track.**
 **Author: Shuaibu Yahaya — independent Web3 research and content specialist
 since 2020, based in Nigeria.**
 Every figure is computed by `rebuild.py` from the appendix sources

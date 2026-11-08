@@ -1,6 +1,6 @@
-# Flow, Not Price — The $37B Decoupling (DRAFT)
+# Flow, Not Price — The $37B Decoupling
 
-**Status:** Public — live dashboard at https://iamyerhyer.github.io/near-intents-signal/ (thesis text still marked DRAFT pending author's final review).
+**Status:** Public — live dashboard at https://iamyerhyer.github.io/near-intents-signal/ (thesis finalised 8 Nov 2026 after the author's review).
 **Event:** NEAR HACKATHON (1–14 Nov 2026), track: Investment Thesis (`thesis`).
 **Author:** Shuaibu Yahaya (solo).
 **Second entry:** This is one of two independent entries by the same author. The other is [near-intents-checkout](https://github.com/IamYerhyer/near-intents-checkout) — a universal checkout widget for NEAR Intents (Business track).
@@ -88,7 +88,7 @@ fetch result (value, timestamp, or the failure reason) is recorded under
 
 - `rebuild.py` — the one command. Fetches, tidies, computes, renders.
 - `index.html` — generated dashboard (do not hand-edit; re-run rebuild.py).
-- `THESIS.md` — the written thesis (DRAFT).
+- `THESIS.md` — the written thesis (final).
 - `model_config.json` — editable scenario assumptions for Panel 6 (volume
   multipliers only; base inputs are computed from data by `rebuild.py`).
 - `data/` — generated CSVs + `key_stats.json` + `model_outputs.json`;
