@@ -3,7 +3,7 @@
 **Status:** Public — live dashboard at https://iamyerhyer.github.io/near-intents-signal/ (thesis finalised 8 Nov 2026 after the author's review).
 **Event:** NEAR HACKATHON (1–14 Nov 2026), track: Investment Thesis (`thesis`).
 **Author:** Shuaibu Yahaya (solo).
-**Second entry:** This is one of two independent entries by the same author. The other is [near-intents-checkout](https://github.com/IamYerhyer/near-intents-checkout) — a universal checkout widget for NEAR Intents (Business track).
+**Second entry:** This is one of two independent entries by the same author. The other is [nearnaira](https://github.com/IamYerhyer/nearnaira) — NearNaira, a fiat-first NEAR wallet that converts NEAR assets to local currency (Real-World Money track).
 
 ## What this is
 
